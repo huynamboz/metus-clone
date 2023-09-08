@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<title>Login</title>
+</head>
+<body>
+	<div class="w-[100%] min-h-[100vh] flex justify-center items-center max-md:px-[10px]">
+		<div class="p-[3rem] max-md:p-[1.5rem] max-md:w-full shadow-[rgba(0,0,0,0.09)_0px_2px_25px_0px] rounded-[0.5rem] flex flex-col gap-[1.25rem] items-center">
+			<p class="text-[30px] font-[600]">Đăng ký Metus</p>
+			<p class="text-[1rem] text-[rgb(76,175,79)] font-[700]">Vui lòng đăng ký để sử dụng dịch vụ</p>
+			<div class="flex mt-[8px] flex-col items-center w-full">
+				<form action="" class="w-full flex gap-[16px] flex-col">
+					<div class="min-w-[240px] max-md:min-w-[0px] w-full py-[16.5px] px-[14px]  shadow-[rgba(0,0,0,0.25)_0px_0px_4px_0px] rounded-[4px]">
+						<input type="email" class="w-[396px] max-md:w-full bg-transparent" style="outline: none;" placeholder="Nhập email của bạn">
+					</div>
+					<div class="min-w-[240px] w-full shadow-[rgba(0,0,0,0.25)_0px_0px_4px_0px] rounded-[4px]">
+						<input type="password" class="py-[16.5px] bg-transparent px-[14px] w-full" style="outline: none;" placeholder="Nhập mật khẩu của bạn">
+					</div>
+					<div class="min-w-[240px] w-full shadow-[rgba(0,0,0,0.25)_0px_0px_4px_0px] rounded-[4px]">
+						<input type="password" class="py-[16.5px] bg-transparent px-[14px] w-full" style="outline: none;" placeholder="Nhập lại mật khẩu">
+					</div>
+					<div class="min-w-[240px] w-full shadow-[rgba(0,0,0,0.25)_0px_0px_4px_0px] rounded-[4px]">
+						<input type="password" class="py-[16.5px] bg-transparent px-[14px] w-full" style="outline: none;" placeholder="Nhập mã giới thiệu (nếu có)">
+					</div>
+					<div class="flex gap-[30px] max-md:flex-col-reverse max-md:gap-[8px]">
+						<div class="min-w-[240px] w-full shadow-[rgba(0,0,0,0.25)_0px_0px_4px_0px] rounded-[4px]">
+							<input type="password" class="py-[16.5px] bg-transparent px-[14px] w-full" style="outline: none;" placeholder="Nhập mã xác nhận">
+						</div>
+						<button type="submit" class="w-full bg-[rgb(76,175,79)] 
+					text-white py-[6px] px-[16px] font-[700] text-[1.125rem] rounded-[4px]
+					h-[55.5px]
+					shadow-[rgba(0,0,0,0.2)_0px_2px_4px_-1px,rgba(0,0,0,0.14)_0px_4px_5px_0px,rgba(0,0,0,0.12)_0px_1px_10px_0px]">
+						Lấy mã
+					</button>
+					</div>
+					<button type="submit" class="w-full bg-[rgb(76,175,79)] 
+					text-white py-[6px] px-[16px] font-[700] text-[1rem] h-[2.875rem] rounded-[4px] mt-[16px]
+					shadow-[rgba(0,0,0,0.2)_0px_2px_4px_-1px,rgba(0,0,0,0.14)_0px_4px_5px_0px,rgba(0,0,0,0.12)_0px_1px_10px_0px]">
+						ĐĂNG KÝ
+					</button>
+				</form>
+				<button class="border-[1px] border-[rgba(76,175,79,0.5)] 
+				text-[rgb(76,175,79)] h-[2.875rem] flex justify-center items-center
+				font-[700] text-[1rem] rounded-[4px] mt-[16px] w-full
+				hover:bg-[rgba(76,175,79,0.04)]
+				">
+					<img src="./assets/icons/google.webp" alt=""> &nbsp;ĐĂNG NHẬP BẰNG GOOGLE
+				</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

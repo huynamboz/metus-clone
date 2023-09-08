@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<title>Document</title>
+</head>
+
+<body>
+	<!-- Navbar -->
+	<nav class="h-[72px] fixed top-0 w-full flex items-center justify-between bg-white">
+		<div>
+			<div class="max-[1200px]:block hidden text-[40px] pl-2">
+				<img class="w-[35px] cursor-pointer" src="./assets/icons/Hamburger_icon.svg"
+					onclick="openSideBarMobile()" alt="">
+			</div>
+		</div>
+		<div class="flex pr-5 items-center h-full gap-[8px]">
+			<p class="text-[rgb(76,175,79)] mr-3">0 Xu</p>
+			<div onclick="openPopupSetting('lang')"
+				class=" h-[43px] w-[43px] cursor-pointer relative rounded-full hover:bg-[rgba(0,0,0,0.04)] flex items-center justify-center cursor-pointner">
+				<img width="40px" height="40px" class="rounded-full object-cover"
+					src="https://metus.vn/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvn_language.9b9f12c6.png&w=48&q=75"
+					alt="">
+
+
+				<div id="popup-lang" class="invisible absolute top-[120%] right-0 rounded-[4px]">
+					<div onclick="closePopupSetting(event, 'lang')" class="fixed top-0 left-0 w-[100vw] h-[100vh] z-10">
+					</div>
+					<div id="popup-lang-child"
+						class="relative z-20 bg-[rgb(255,255,255)] rounded-[4px] h-fit w-[110px] shadow-[rgba(0,0,0,0.2)_0px_5px_5px_-3px,_rgba(0,0,0,0.14)_0px_8px_10px_1px,rgba(0,0,0,0.12)_0px_3px_14px_2px]">
+						<div class="p-2">
+							<div class="flex hover:bg-[rgba(0,0,0,0.04)] cursor-pointer p-2 items-center pl-2 gap-2">
+								<p class=" font-[600] text-[0.875rem]">Tiếng Việt</p>
+							</div>
+							<div class="flex hover:bg-[rgba(0,0,0,0.04)] cursor-pointer p-2 items-center pl-2 gap-2">
+								<p class=" font-[600] text-[0.875rem]">Tiếng Anh</p>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div onclick="openPopupSetting('noti')"
+				class="cursor-pointer h-[36px] w-[36px] rounded-full hover:bg-[rgba(0,0,0,0.04)] flex items-center justify-center cursor-pointner relative">
+				<div class="text-gray-900 relative">
+					<div class="w-[20px] h-[20px] rounded-full flex items-center justify-center text-white text-xs
+					absolute -top-3 -right-2
+				bg-[#d32f2f]">
+						4
+					</div>
+					<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+						class="bi bi-bell-fill" viewBox="0 0 16 16">
+						<path
+							d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+					</svg>
+				</div>
+
+				<div id="popup-noti" class="invisible absolute top-[120%] right-0 max-md:-right-16 rounded-[4px]">
+					<div onclick="closePopupSetting(event, 'noti')" class="fixed top-0 left-0 w-[100vw] h-[100vh] z-10">
+					</div>
+					<div id="popup-noti-child"
+						class="relative z-20 bg-[rgb(255,255,255)] rounded-[4px] h-fit w-[360px] max-md:w-[343px] shadow-[rgba(0,0,0,0.2)_0px_5px_5px_-3px,_rgba(0,0,0,0.14)_0px_8px_10px_1px,rgba(0,0,0,0.12)_0px_3px_14px_2px]">
+						<div class="p-3 font-[400] text-[0.75rem]">
+							THÔNG BÁO MỚI
+						</div>
+						<div class="flex flex-col gap-[1px] cursor-pointer">
+							<div class="p-3 bg-[#ebebeb] hover:bg-[rgba(0,0,0,0.04)]">
+								<h6 class="font-[500] text-gray-900 text-[0.875rem]">
+									Lorem ipsum dolor sit amet
+									<span class="font-[400]">&nbsp; Lorem ipsum dolor sit amet</span>
+								</h6>
+							</div>
+							<div class="p-3 bg-[#ebebeb] hover:bg-[rgba(0,0,0,0.04)]">
+								<h6 class="font-[500] text-gray-900 text-[0.875rem]">
+									Lorem ipsum dolor sit amet
+									<span class="font-[400]">&nbsp; Lorem ipsum dolor sit amet</span>
+								</h6>
+							</div>
+						</div>
+						<div class="p-3 font-[400] text-[0.75rem]">
+							THÔNG BÁO TRƯỚC ĐÓ
+						</div>
+						<div class="flex flex-col gap-[1px] cursor-pointer">
+							<div class="p-3 hover:bg-[#ebebeb]">
+								<h6 class="font-[500] text-gray-900 text-[0.875rem]">
+									Lorem ipsum dolor sit amet
+									<span class="font-[400]">&nbsp; Lorem ipsum dolor sit amet</span>
+								</h6>
+							</div>
+							<div class="p-3 hover:bg-[#ebebeb]">
+								<h6 class="font-[500] text-gray-900 text-[0.875rem]">
+									Lorem ipsum dolor sit amet
+									<span class="font-[400]">&nbsp; Lorem ipsum dolor sit amet</span>
+								</h6>
+							</div>
+						</div>
+						<div class="border-b-[1px] border-dashed"></div>
+						<div class="p-2">
+							<div
+								class="flex hover:bg-[rgba(0,0,0,0.04)] cursor-pointer p-1 items-center justify-center pl-2 gap-2">
+								<p class=" font-[400] text-[0.875rem]">Xem tất cả</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div onclick="openPopupSetting('setting')"
+				class="h-[56px] w-[56px] relative rounded-full hover:bg-[rgba(0,0,0,0.04)] flex items-center justify-center cursor-pointner">
+				<img width="40px" height="40px" class="rounded-full object-cover"
+					src="https://lh3.googleusercontent.com/a/AAcHTtfMmfGw-Vnb-0jqIr4ClO4N80E6ngCb4Lxoqc0n6NdJZ83Y=s96-c"
+					alt="">
+				<div id="popup-setting" class="invisible absolute top-[120%] right-0 rounded-[4px]">
+					<div onclick="closePopupSetting(event, 'setting')"
+						class="fixed top-0 left-0 w-[100vw] h-[100vh] z-10"></div>
+					<div id="popup-setting-child"
+						class="relative z-20 bg-[rgb(255,255,255)] rounded-[4px] h-fit w-[200px] shadow-[rgba(0,0,0,0.2)_0px_5px_5px_-3px,_rgba(0,0,0,0.14)_0px_8px_10px_1px,rgba(0,0,0,0.12)_0px_3px_14px_2px]">
+						<div class="p-2">
+							<div class="flex hover:bg-[rgba(0,0,0,0.04)] cursor-pointer p-1 items-center pl-2 gap-2">
+								<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
+									<path fill="currentColor"
+										d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4s-4 1.79-4 4s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+								</svg>
+								<p class=" font-[400] text-[0.875rem]">Thông tin tài khoản</p>
+							</div>
+							<div class="flex hover:bg-[rgba(0,0,0,0.04)] cursor-pointer p-1 items-center pl-2 gap-2">
+								<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
+									<path fill="currentColor"
+										d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
+								</svg>
+								<p class=" font-[400] text-[0.875rem]">Thêm Facebook</p>
+							</div>
+							<div class="flex hover:bg-[rgba(0,0,0,0.04)] cursor-pointer p-1 items-center pl-2 gap-2">
+								<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
+									<path fill="currentColor"
+										d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z" />
+								</svg>
+								<p class=" font-[400] text-[0.875rem]">Danh sách hẹn</p>
+							</div>
+						</div>
+						<div class="border-b-[1px] border-dashed"></div>
+						<div class="p-2">
+							<div class="flex hover:bg-[rgba(0,0,0,0.04)] cursor-pointer p-1 items-center pl-2 gap-2">
+								<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24">
+									<path fill="currentColor"
+										d="M6 2h9a2 2 0 0 1 2 2v2h-2V4H6v16h9v-2h2v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
+									<path fill="currentColor"
+										d="M16.09 15.59L17.5 17l5-5l-5-5l-1.41 1.41L18.67 11H9v2h9.67z" />
+								</svg>
+								<p class=" font-[400] text-[0.875rem]">Đăng xuất</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- End Navbar -->
+	<!-- Collapse tab left -->
+	<div id="side-bar-container" class="invisible w-[100vw] h-[100vh] fixed top-0 left-0 z-[9999] [1200px]:hidden">
+		<div class="
+		side-bar-overlay 
+		w-full h-full bg-black absolute opacity-50 top-0 left-0 z-10 cursor-pointer" onclick="closeSideBarMobile()"></div>
+		<div id="side-bar-mobile" class="
+		bg-white
+		tab-left-close
+		w-[280px] h-full z-20 absolute">
+			<div class="w-full ">
+				<div class="text-3xl ml-[20px] mt-[24px]">
+					<div class="flex justify-between items-center">
+						<div class=" flex gap-3 side-bar-logo">
+							<img src="./assets/icons/logo.svg" alt="">
+							<p class="logo-text text-gray-900">METUS.VN</p>
+						</div>
+						<svg onclick="closeSideBarMobile()" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+							viewBox="0 0 24 24">
+							<path fill="currentColor" d="M15.41 7.41L14 6l-6 6l6 6l1.41-1.41L10.83 12z" />
+						</svg>
+					</div>
+					<i class="bi bi-x cursor-pointer"></i>
+				</div>
+				<div class="flex flex-col px-[9px] text-gray-900 pt-[20px] overflow-x-hidden">
+					<a href="/tools" class="rounded-[4px] h-[48px] hover:bg-[rgba(0,0,0,0.08)] px-4">
+						<div class="w-[250px] flex items-center gap-[20px] h-full ">
+							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+								class="bi bi-house-door-fill" viewBox="0 0 16 16">
+								<path
+									d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z" />
+							</svg>
+							<p class="side-bar-menu-text w-[200px] font-[700] text-[1rem]">Trang chủ</p>
+						</div>
+					</a>
+
+					<div class="rounded-[4px] h-[48px] bg-[#4caf4f] text-white cursor-pointer px-4">
+						<a href="/account" class="w-[250px] flex items-center gap-[20px] h-full ">
+							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+								class="bi bi-person-fill" viewBox="0 0 16 16">
+								<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+							</svg>
+							<p class="side-bar-menu-text w-[200px] font-[700] text-[1rem]">Tài khoản</p>
+						</a>
+					</div>
+
+					<div class="rounded-[4px] h-[48px] hover:bg-[rgba(0,0,0,0.08)] cursor-pointer px-4">
+						<a href="/recharge" class="w-[250px] flex items-center gap-[20px] h-full ">
+							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+								class="bi bi-cash" viewBox="0 0 16 16">
+								<path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+								<path
+									d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2H3z" />
+							</svg>
+							<p class="side-bar-menu-text w-[200px] font-[700] text-[1rem]">Nạp tiền</p>
+						</a>
+					</div>
+
+					<div class="rounded-[4px] h-[48px] hover:bg-[rgba(0,0,0,0.08)] cursor-pointer px-4">
+						<a href="/pricing-plan" class="w-[250px] flex items-center gap-[20px] h-full ">
+							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+								class="bi bi-cart-fill" viewBox="0 0 16 16">
+								<path
+									d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+							</svg>
+							<p class="side-bar-menu-text w-[200px] font-[700] text-[1rem]">Giá dịch vụ</p>
+						</a>
+					</div>
+
+					<div class="rounded-[4px] h-[48px] hover:bg-[rgba(0,0,0,0.08)] cursor-pointer px-4">
+						<a href="/add-facebook" class="w-[250px] flex items-center gap-[20px] h-full ">
+							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+								class="bi bi-facebook" viewBox="0 0 16 16">
+								<path
+									d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+							</svg>
+							<p class="side-bar-menu-text w-[200px] font-[700] text-[1rem]">Facebook</p>
+						</a>
+					</div>
+
+					<div class="rounded-[4px] h-[48px] hover:bg-[rgba(0,0,0,0.08)] cursor-pointer px-4">
+						<a href="/post-schedule" class="w-[250px] flex items-center gap-[20px] h-full ">
+							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+								class="bi bi-calendar-week" viewBox="0 0 16 16">
+								<path
+									d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+								<path
+									d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+							</svg>
+							<p class="side-bar-menu-text w-[200px] font-[700] text-[1rem]">Bài hẹn lịch</p>
+						</a>
+					</div>
+
+					<div class="rounded-[4px] h-[48px] hover:bg-[rgba(0,0,0,0.08)] cursor-pointer px-4">
+						<a href="/#" class="w-[250px] flex items-center gap-[20px] h-full ">
+							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+								class="bi bi-bell-fill" viewBox="0 0 16 16">
+								<path
+									d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+							</svg>
+							<p class="side-bar-menu-text w-[200px] font-[700] text-[1rem]">Thông báo</p>
+						</a>
+					</div>
+
+					<div class="rounded-[4px] h-[48px] hover:bg-[rgba(0,0,0,0.08)]  cursor-pointer px-4">
+						<a href="/guide" class="w-[250px] flex items-center gap-[20px] h-full ">
+							<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+								class="bi bi-camera-video-fill" viewBox="0 0 16 16">
+								<path fill-rule="evenodd"
+									d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z" />
+							</svg>
+							<p class="side-bar-menu-text w-[200px] font-[700] text-[1rem]">Hướng dẫn</p>
+						</a>
+					</div>
+
+					<div class="rounded-[4px] h-[48px] hover:bg-[rgba(0,0,0,0.08)] text-white cursor-pointer px-4">
+						<a href="/contact" class="w-[250px] flex items-center gap-[20px] h-full ">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+								class="bi bi-headset" viewBox="0 0 16 16">
+								<path
+									d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5z" />
+							</svg>
+							<p class="side-bar-menu-text w-[200px] font-[700] text-[1rem]">Chăm sóc khách hàng</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Collapse tab left -->
+	<div class="flex">
+		<!-- Sidebar -->
+		<nav class="bg-white max-md:hidden">
+			<div id="side-bar" class="side-bar-active overflow-hidden"
+				style="transition: width 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;">
+				<div class="side-bar-child fixed overflow-x-hidden top-0 left-0 bg-white min-h-[100vh]"
+					style="transition: width 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;">
+					<div class="flex items-center justify-between">
+						<div class=" mt-5 ml-5 flex gap-3 side-bar-logo">
+							<img src="./assets/icons/logo.svg" alt="">
+							<p class="logo-text text-gray-900">METUS.VN</p>
+						</div>
+						<div class="left-btn w-[40px] mt-5 ml-2 h-[40px] flex items-center justify-center rounded-full cursor-pointer
+						hover:bg-[rgba(0,0,0,0.04)]" onclick="closeSideBar()">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+								class="bi bi-chevron-left" viewBox="0 0 16 16">
+								<path fill-rule="evenodd"
+									d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+							</svg>
+						</div>
+						<div class="right-btn w-[40px] mt-5 ml-2 h-[40px] flex items-center justify-center rounded-full cursor-pointer
+						hover:bg-[rgba(0,0,0,0.04)]" onclick="openSideBar()">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+								class="bi bi-chevron-right" viewBox="0 0 16 16">
+								<path fill-rule="evenodd"
+									d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+							</svg>
+						</div>
+					</div>
+					<div class="flex flex-col px-[9px] text-gray-900 pt-[30px] overflow-x-hidden">
+						<a href="/tools" class="rounded-[4px] h-[48px] hover:bg-[rgba(0,0,0,0.08)] px-4">
+							<div class="w-[250px] flex items-center gap-[20px] h-full ">
+								<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+									class="bi bi-house-door-fill" viewBox="0 0 16 16">
+									<path
+										d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z" />
+								</svg>
+								<p class="side-bar-menu-text w-[200px] font-[700] text-[1rem]">Trang chủ</p>
+							</div>
+						</a>
+
+						<div class="rounded-[4px] h-[48px] bg-[#4caf4f] text-white cursor-pointer px-4">
+							<a href="/account" class="w-[250px] flex items-center gap-[20px] h-full ">
+								<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+									class="bi bi-person-fill" viewBox="0 0 16 16">
+									<path
+										d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+								</svg>
+								<p class="side-bar-menu-text w-[200px] font-[700] text-[1rem]">Tài khoản</p>
+							</a>
+						</div>
+
+						<div class="rounded-[4px] h-[48px] hover:bg-[rgba(0,0,0,0.08)] cursor-pointer px-4">
+							<a href="/recharge" class="w-[250px] flex items-center gap-[20px] h-full ">
+								<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+									class="bi bi-cash" viewBox="0 0 16 16">
+									<path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+									<path
+										d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2H3z" />
+								</svg>
+								<p class="side-bar-menu-text w-[200px] font-[700] text-[1rem]">Nạp tiền</p>
+							</a>
+						</div>
+
+						<div class="rounded-[4px] h-[48px] hover:bg-[rgba(0,0,0,0.08)] cursor-pointer px-4">
+							<a href="/pricing-plan" class="w-[250px] flex items-center gap-[20px] h-full ">
+								<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+									class="bi bi-cart-fill" viewBox="0 0 16 16">
+									<path
+										d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+								</svg>
+								<p class="side-bar-menu-text w-[200px] font-[700] text-[1rem]">Giá dịch vụ</p>
+							</a>
+						</div>
+
+						<div class="rounded-[4px] h-[48px] hover:bg-[rgba(0,0,0,0.08)] cursor-pointer px-4">
+							<a href="/add-facebook" class="w-[250px] flex items-center gap-[20px] h-full ">
+								<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+									class="bi bi-facebook" viewBox="0 0 16 16">
+									<path
+										d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+								</svg>
+								<p class="side-bar-menu-text w-[200px] font-[700] text-[1rem]">Facebook</p>
+							</a>
+						</div>
+
+						<div class="rounded-[4px] h-[48px] hover:bg-[rgba(0,0,0,0.08)] cursor-pointer px-4">
+							<a href="/post-schedule" class="w-[250px] flex items-center gap-[20px] h-full ">
+								<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+									class="bi bi-calendar-week" viewBox="0 0 16 16">
+									<path
+										d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+									<path
+										d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+								</svg>
+								<p class="side-bar-menu-text w-[200px] font-[700] text-[1rem]">Bài hẹn lịch</p>
+							</a>
+						</div>
+
+						<div class="rounded-[4px] h-[48px] hover:bg-[rgba(0,0,0,0.08)] cursor-pointer px-4">
+							<a href="/#" class="w-[250px] flex items-center gap-[20px] h-full ">
+								<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+									class="bi bi-bell-fill" viewBox="0 0 16 16">
+									<path
+										d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+								</svg>
+								<p class="side-bar-menu-text w-[200px] font-[700] text-[1rem]">Thông báo</p>
+							</a>
+						</div>
+
+						<div class="rounded-[4px] h-[48px] hover:bg-[rgba(0,0,0,0.08)] cursor-pointer px-4">
+							<a href="/guide" class="w-[250px] flex items-center gap-[20px] h-full ">
+								<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+									class="bi bi-camera-video-fill" viewBox="0 0 16 16">
+									<path fill-rule="evenodd"
+										d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z" />
+								</svg>
+								<p class="side-bar-menu-text w-[200px] font-[700] text-[1rem]">Hướng dẫn</p>
+							</a>
+						</div>
+
+						<div class="rounded-[4px] h-[48px] hover:bg-[rgba(0,0,0,0.08)] text-white cursor-pointer px-4">
+							<a href="/contact" class="w-[250px] flex items-center gap-[20px] h-full ">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+									class="bi bi-headset" viewBox="0 0 16 16">
+									<path
+										d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5z" />
+								</svg>
+								<p class="side-bar-menu-text w-[200px] font-[700] text-[1rem]">Chăm sóc khách hàng</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!-- End sidebar -->
+		<div class="w-[100%] h-[calc(100vh-72px)] bg-[#f0f2f5] mt-[72px] p-7 pt-0 max-md:px-4">
+			<div class="w-full h-fit py-4 flex flex flex-col gap-5 w-full pb-7 
+			rounded-[8px] max-[1200px]:mb-5">
+				<div class="flex w-full gap-5 flex-col">
+					<div class="flex flex-col pb-7 rounded-[2px] bg-white flex-1">
+						<div class="flex justify-between items-center px-4 py-5">
+							<div class="flex text-[rgb(76,175,79)] flex items-center gap-3 pt-3 pb-4">
+								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+									<path fill="currentColor"
+										d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm0 14c-2.03 0-4.43-.82-6.14-2.88a9.947 9.947 0 0 1 12.28 0C16.43 19.18 14.03 20 12 20z" />
+								</svg>
+								<p class="font-[700]">Thông tin giới thiệu</p>
+							</div>
+						</div>
+						<div class="w-full border-b-[1px] border-dashed border-[#4CAF4F]"></div>
+						<div class="font-[700] text-[1rem] text-gray-900 p-4">
+							<div class="flex flex-col gap-4">
+
+								<p>Mời bạn bè đăng ký thông qua đường link dưới đây để được hưởng hoa hồng</p>
+
+								<div class="flex gap-[20px]">
+									<div class="border-[rgba(0,0,0,0.26)] border-[1px] rounded-[4px] p-1 px-2 text-[#9e9e9e]">
+										<input value="https://metus.vn/register?referCode=64f076b917c7d1364e76ca18" class=" max-md:w-[190px] max-md:font-[600]" disabled style="outline: none;"  type="text" >
+									</div>
+									<button onclick="copy()"
+										class="whitespace-nowrap font-[500] w-fit btn-primary-hover flex text-[0.875rem] text-white max-md:px-[12px] max-md:text-[0.8125rem] text-btn-primary bg-[--green-primary] h-fit py-[7px] px-[22px]  rounded-[4px]">
+										Sao chép
+									</button>
+								</div>
+
+								<div class="flex flex-wrap mt-4">
+									<div class="flex flex-wrap gap-[10px] justify-around max-[1200px]:flex-col w-full">
+										<div
+											class="w-[300px] max-[1200px]:w-full border-[1px] rounded-[4px] px-[50px] py-1 font-[700] text-[1rem] border-dashed border-[rgb(161,165,183)]">
+											<div class="flex flex-col gap-2 items-center w-full text-[1rem]">
+												<p class="text-[#FF0000]">Tổng hoa hồng đã nhận</p>
+												<p>0 xu</p>
+											</div>
+										</div>
+
+										<div
+											class="w-[300px] max-[1200px]:w-full border-[1px] rounded-[4px] px-[50px] py-1 font-[700] text-[1rem] border-dashed border-[rgb(161,165,183)]">
+											<div class="flex flex-col gap-2 items-center w-full text-[1rem]">
+												<p class="text-[#4CAF4F]">Tổng lần nạp</p>
+												<p>0</p>
+											</div>
+										</div>
+
+										<div
+											class="w-[300px] max-[1200px]:w-full border-[1px] rounded-[4px] px-[50px] py-1 font-[700] text-[1rem] border-dashed border-[rgb(161,165,183)]">
+											<div class="flex flex-col gap-2 items-center w-full text-[1rem]">
+												<p class="text-[#FFAD0F]">Số người đã giới thiệu</p>
+												<p>0</p>
+											</div>
+										</div>
+								</div>
+							</div>
+
+							<p class="text-[#4CAF4F]">CÁCH THỨC GIỚI THIỆU BẠN BÈ</p>
+							<p class="">1 - Gửi link giới thiệu có chứa mã giới thiệu cho bạn bè để bạn bè đăng ký qua link.</p>
+							<p class="">2 - Gửi mã giới thiệu cho bạn bè, sau khi đăng ký bạn của bạn nhập mã giới thiệu ở bước cuối cùng là hoàn thành.</p>
+							<p class="">3 - Khi giới thiệu bạn bè thành công, bạn có thể được 10% số tiền mà bạn bè đã nạp.</p>
+							<p class="">Ví dụ : người bạn giới thiệu nạp <span class="text-[#ed6c02]">100,000</span> xu thì bạn được nhận <span class="text-[#ed6c02]">10,000</span> xu hoa hồng</p>
+						</div>
+					</div>
+				</div>
+				<div class="w-full h-fit bg-white py-4 flex flex-col pb-4 max-md:pb-0">
+					<div
+						class="text-[#4CAF4F] flex gap-[12px] max-md:gap-[5px] font-[700] text-[1rem] items-center justify-between pb-[20px] pt-[10px] px-4">
+						<p>Danh sách tài khoản</p>
+						<div class="flex gap-[20px] max-md:gap-[5px]">
+								<input placeholder="Nhập từ khóa" class="max-md:w-[90px] text-center border-[rgba(0,0,0,0.26)] border-[1px] rounded-[4px] font-[500] text-center p-1 px-2 text-[#9e9e9e]" style="outline: none;"  type="text" >
+							<button
+								class="max-md:rounded-[8px] font-[600] w-fit flex text-[0.875rem] text-[--green-primary] max-md:px-[8px] max-md:text-[0.8125rem] text-btn-primary border-[1px] border-[--green-primary] h-fit py-[6px] px-[22px]  rounded-[4px]">
+								<p class="max-md:hidden whitespace-nowrap" >Tìm kiếm</p>
+								<svg class="hidden max-md:block" xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 24 24"><path fill="currentColor" d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5l-1.5 1.5l-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16A6.5 6.5 0 0 1 3 9.5A6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14S14 12 14 9.5S12 5 9.5 5Z"/></svg>
+							</button>
+						</div>
+					</div>
+					<div class="w-full border-b-[1px] border-dashed border-[#4CAF4F]"></div>
+					<div class="w-full flex justify-around mt-4 overflow-x-auto gap-[10px] max-md:pb-4">
+						<table class="max-md:w-[700px] w-full overflow-x-auto max-md:block">
+							<tr class="font-[400]">
+								<th class="px-7 whitespace-nowrap font-[400]">ID</th>
+								<th class="px-7 whitespace-nowrap font-[400]">Tài khoản</th>
+								<th class="px-7 whitespace-nowrap font-[400]">Tổng nạp</th>
+								<th class="px-7 whitespace-nowrap font-[400]">Ngày tạo</th>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	function closeSideBar() {
+		document.getElementById('side-bar').classList.remove('side-bar-active');
+		document.getElementById('side-bar').classList.add('side-bar-inactive');
+	}
+	function openSideBar() {
+		document.getElementById('side-bar').classList.remove('side-bar-inactive');
+		document.getElementById('side-bar').classList.add('side-bar-active');
+	}
+	function copy() {
+		navigator.clipboard.writeText("https://metus.vn/register?referCode=64f076b917c7d1364e76ca18")
+	}
+</script>
+<script src="./assets/js/main.js"></script>
+
+</html>

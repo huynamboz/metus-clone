@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+:root {
+  --green-primary: #4CAF4F;
+  --gray-primary: #4D4D4D;
+  --text-btn-size: 0.9375rem;
+}
+.btn-primary-hover:hover {
+	transition: .2s;
+	-webkit-text-decoration: none;
+    text-decoration: none;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F5F7FA;
+  font-family: 'Inter', sans-serif;
+  color: var(--gray-primary);
+}
+.logo-text {
+	font-family: 'Luckiest Guy', cursive;
+	font-size: 1.5rem;
+	display: inline-block;
+}
+.side-bar-active, .side-bar-child {
+	width: 280px;
+}
+.side-bar-inactive {
+	width: 65px;
+}
+.side-bar-inactive .side-bar-child {
+	width: 65px;
+}
+.side-bar-inactive .side-bar-logo {
+	display: none;
+}
+.side-bar-active .left-btn {
+	display: flex;
+}
+.side-bar-active .right-btn {
+	display: none;
+}
+.side-bar-inactive .left-btn {
+	display: none;
+}
+.side-bar-inactive .right-btn {
+	display: flex;
+}
+.side-bar-inactive .side-bar-menu-text {
+	display: none;
+}
+/* popup profile */
+@keyframes zoomInFromTopRight {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+		transform-origin: top right;
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+		transform-origin: top right;
+	}
+}
+@keyframes zoomOutToTopRight {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+		transform-origin: top right;
+	}
+	100% {
+		opacity: 0;
+		transform: scale(0);
+		transform-origin: top right;
+	}
+}
+.show-settings {
+	animation: .2s ease-out 0s 1 zoomInFromTopRight forwards;
+}
+.hide-settings {
+	animation: .2s ease-out 0s 1 zoomOutToTopRight forwards;
+}
+/* collapse sidebar */
+
+.hide-side {
+	animation: .2s ease-out 0s 1 hideSide forwards;
+}
+@keyframes hideSide {
+	0% {
+		visibility: visible;
+		opacity: 1;
+	}
+	99% {
+		visibility: visible;
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+.tab-left-close {
+	animation: .3s ease-in-out slideOutFromLeft forwards;
+}
+@keyframes slideOutFromLeft {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+.tab-left-show {
+	animation: .2s ease-out 0s 1 slideInFromLeft forwards;
+}
+@keyframes slideInFromLeft {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}

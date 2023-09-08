@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<link href="./assets/css/swiper-bundle.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+	<script src="./assets/js/swiper-bundle.min.js"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<title>Home</title>
+</head>
+
+<body>
+	<!-- Nav bar -->
+	<nav class="py-[1.8rem] px-[1.8rem] max-[1200px]:py-[1.5rem] max-[1200px]:px-[1rem] bg-white flex justify-center">
+		<div class="max-w-[1480px] w-full flex justify-between h-full items-center">
+			<div class="flex gap-[10px] items-center">
+				<div class="max-[1200px]:block hidden text-[40px]">
+					<img class="w-[35px] cursor-pointer" src="./assets/icons/Hamburger_icon.svg" onclick="openSideBar()" alt="">
+				</div>
+				<img class="" src="./assets/images/logo.svg" alt="">
+				<p class="logo-text text-gray-900">METUS.VN</p>
+			</div>
+			<div class="max-[1200px]:hidden">
+				<ul class="flex text-header gap-[40px]">
+					<li class="mr-[20px] hover:underline cursor-pointer hover:text-[--green-primary]">Trang chủ</li>
+					<li class="mr-[20px] hover:underline cursor-pointer hover:text-[--green-primary]">Dịch vụ</li>
+					<li class="mr-[20px] hover:underline cursor-pointer hover:text-[--green-primary]">Về chúng tôi</li>
+					<li class="mr-[20px] hover:underline cursor-pointer hover:text-[--green-primary]">Liên hệ</li>
+				</ul>
+			</div>
+			<div class="flex gap-[16px]">
+				<a href="/login"
+					class="btn-primary-hover max-md:bg-[--green-primary] max-md:text-white max-md:px-[8px] max-md:text-[0.8125rem] text-btn-primary bg-[#F5F7FA] text-[--green-primary] h-fit py-[8px] px-[22px]  rounded-[6px]">Đăng
+					nhập</a>
+				<a href="/register"
+					class="max-md:hidden btn-primary-hover text-btn-primary bg-[--green-primary] h-fit py-[8px] px-[22px] rounded-[6px] text-white">Đăng
+					ký</a>
+				<img class="h-[46px] max-[1200px]:h-[36px]"
+					src="https://metus.vn/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvn_flag.51f783d8.png&w=48&q=75"
+					alt="">
+			</div>
+		</div>
+	</nav>
+	<!-- End navbar -->
+	<!-- Collapse tab left -->
+	<div id="side-bar-container" class="invisible w-[100vw] h-[100vh] fixed top-0 left-0 z-[9999] [1200px]:hidden">
+		<div class="
+		side-bar-overlay 
+		w-full h-full bg-black absolute opacity-50 top-0 left-0 z-10 cursor-pointer" onclick="closeSideBar()"></div>
+		<div id="side-bar" class="
+		bg-white
+		tab-left-close
+		w-[280px] h-full z-20 absolute">
+			<div class="w-full ">
+				<div class="text-3xl ml-[40px] mt-[24px]">
+					<i class="bi bi-x cursor-pointer" onclick="closeSideBar()"></i></div>
+					<div class="w-full h-[1px] mt-[24px] bg-[rgba(0,0,0,0.12)] mb-[24px]"></div>
+					<ul>
+						<li class="py-[16px] ml-[40px]">Trang chủ</li>
+						<li class="py-[16px] ml-[40px]">Dịch vụ</li>
+						<li class="py-[16px] ml-[40px]">Về chúng tôi</li>
+						<li class="py-[16px] ml-[40px]">Liên hệ</li>
+					</ul>
+			</div>
+		</div>
+	</div>
+	<!-- Banner -->
+	<section class="w-full flex justify-center overflow-hidden">
+		<div class="px-[32px] w-full flex justify-center items-center h-[50vh]">
+			<div class="w-[50%] max-[1200px]:w-full max-[1200px]:flex max-[1200px]:items-center max-[1200px]:flex-col">
+				<div>
+					<p class="text-[50px] font-[700] max-[1200px]:text-[30px]">
+						Tạo sự nổi bật cho
+					</p>
+					<p class="text-[50px] font-[700] mb-[2rem] max-[1200px]:text-[30px]">
+						<span class="text-[--green-primary]">Fanpage</span> của bạn
+					</p>
+				</div>
+				<p class="w-[90%] max-md:w-[98%] max-[1200px]:w-[60%] max-[1200px]:text-[0.9rem]">
+					Hệ thống chuyên cung cấp các dịch vụ đăng bài băng chuyền 2 ô, đăng bài băng chuyền 8 ô, xóa bài
+					fanpage hàng loạt,..... cho Fanpage Mạng xã hội như Facebook
+				</p>
+				<button
+					class="mt-[40px] btn-primary-hover text-btn-primary bg-[--green-primary] h-fit py-[8px] px-[22px] rounded-[6px] text-white">
+					Dùng thử miễn phí
+				</button>
+			</div>
+			<div class="max-[1200px]:hidden">
+				<img src="./assets/images/hero-bg.webp" alt="">
+			</div>
+		</div>
+	</section>
+	<!-- End banner -->
+
+	<!-- Customer -->
+	<section class="w-full bg-white flex justify-center">
+		<div class="w-full max-w-[1480px] flex flex-col items-center">
+			<div class="w-full">
+				<div class="py-[40px] mb-[16px] max-[1200px]:flex max-[1200px]:flex-col items-center">
+					<h2 class="text-[40px] font-[600] mb-[8px] text-center max-[1200px]:text-[25px]">
+						Khách hàng của chúng tôi ?
+					</h2>
+					<p class="font-[400] text-[18px] text-center max-[1200px]:w-[80%]">
+						Chúng tôi đã làm việc với rất nhiều hệ thống fanpage lớn ở Việt Nam
+					</p>
+				</div>
+				<div class="flex pt-[16px] justify-around w-full max-md:hidden">
+					<img class="w-[55px] h-[56px]" src="./assets/images/top_cmt.webp" alt="">
+					<img src="./assets/images/vuthanhtung.webp" alt="">
+					<img class="w-[49px] h-[48px]" src="./assets/images/theanh28.webp" alt="">
+					<img class="w-[169px] h-[48px]" src="./assets/images/beatvn.webp" alt="">
+					<img class="w-[48px] h-[48px]" src="./assets/images/ngo.webp" alt="">
+				</div>
+				<div class="max-md:block w-full hidden justify-center">
+					<div class="swiper1 swiper w-full h-[100px]">
+						<!-- Additional required wrapper -->
+						<div class="swiper-wrapper">
+							<!-- Slides -->
+							<div class="swiper-slide flex justify-center">
+								<img class="w-[55px] h-[56px]" src="./assets/images/top_cmt.webp" alt="">
+							</div>
+							<div class="swiper-slide flex justify-center">
+								<img class="w-[81px] h-[80px]" src="./assets/images/vuthanhtung.webp" alt="">
+							</div>
+							<div class="swiper-slide flex justify-center">
+								<img class="w-[49px] h-[48px]" src="./assets/images/theanh28.webp" alt="">
+							</div>
+							<div class="swiper-slide flex justify-center">
+								<img class="w-[169px] h-[48px]" src="./assets/images/beatvn.webp" alt="">
+							</div>
+							<div class="swiper-slide flex justify-center">
+								<img class="w-[48px] h-[48px]" src="./assets/images/ngo.webp" alt="">
+							</div>
+						</div>
+						<!-- If we need pagination -->
+						<div class="swiper-pagination1 swiper-pagination"></div>
+					</div>
+				</div>
+				<div class="py-[2.5rem] w-full flex flex-col items-center">
+					<p class="w-[38.875rem] font-[600] text-[40px] text-center max-md:w-[97%] max-[1200px]:text-[25px]">
+						METUS giúp tăng lượng người theo dõi trang Facebook của bạn nhanh hơn
+					</p>
+					<div class="flex gap-[136px] max-[1200px]:gap-[24px] max-[1190px]:flex-col">
+						<div class="w-[18.6875rem] shadow-[0px_2px_4px_0px_rgba(171,190,209,0.20)]
+					py-[1.5rem] px-[2rem] rounded-[8px]">
+							<div class="p-[16px] pb-[24px] flex flex-col items-center">
+								<div class="w-[3.125rem] h-[3.0625rem] bg-[#E8F5E9] relative">
+									<img class="absolute -top-[7px] -left-[15px]"
+										src="./assets/images/community_icon_1.svg" alt="">
+								</div>
+								<p class="font-[600] text-[40px] mt-[16px] mb-[32px] max-[1200px]:text-[25px]">Công nghệ</p>
+								<p class="font-[400] text-[1rem] text-[rgba(0,0,0,0.6)]">
+									Hệ thống được vận hành hoàn toàn tự động 24/24.
+								</p>
+							</div>
+						</div>
+
+						<div class="w-[18.6875rem] shadow-[0px_2px_4px_0px_rgba(171,190,209,0.20)]
+					py-[1.5rem] px-[2rem] rounded-[8px]">
+							<div class="p-[16px] pb-[24px] flex flex-col items-center">
+								<div class="w-[3.125rem] h-[3.0625rem] bg-[#E8F5E9] relative">
+									<img class="absolute -top-[7px] -left-[15px]"
+										src="./assets/images/community_icon_2.svg" alt="">
+								</div>
+								<p class="font-[600] text-[40px] mt-[16px] mb-[32px] max-[1200px]:text-[25px]">Bảo mật</p>
+								<p class="font-[400] text-[1rem] text-[rgba(0,0,0,0.6)]">
+									Chúng tôi cam kết sẽ bảo mật thông tin người dùng 1 cách tốt nhất.
+								</p>
+							</div>
+						</div>
+
+						<div class="w-[18.6875rem] shadow-[0px_2px_4px_0px_rgba(171,190,209,0.20)]
+					py-[1.5rem] px-[2rem] rounded-[8px]">
+							<div class="p-[16px] pb-[24px] flex flex-col items-center">
+								<div class="w-[3.125rem] h-[3.0625rem] bg-[#E8F5E9] relative">
+									<img class="absolute -top-[7px] -left-[15px]"
+										src="./assets/images/community_icon_3.svg" alt="">
+								</div>
+								<p class="font-[600] text-[40px] mt-[16px] mb-[32px] max-[1200px]:text-[25px]">Hỗ trợ</p>
+								<p class="font-[400] text-[1rem] text-[rgba(0,0,0,0.6)]">
+									Đội ngũ hỗ trợ luôn lắng nghe ý khiến khách hàng để phát triển hệ thống.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</section>
+	<!-- End customer -->
+
+	<!-- slide -->
+	<section class="w-full flex justify-center pt-[24px] pb-[48px] max-[1200px]:px-[30px]">
+		<div class="w-full max-w-[1480px] flex justify-center flex-col items-center">
+			<p class="text-[40px] font-[600] mb-[36px] text-center max-md:text-[25px]">Các gói dịch vụ từ chúng tôi</p>
+			<div class="w-full">
+				<!-- Slider main container -->
+				<div class="swiper swiper2 w-full h-[534px] max-[1200px]:h-[480px]">
+					<!-- Additional required wrapper -->
+					<div class="swiper-wrapper">
+						<!-- Slides -->
+						<div class="swiper-slide h-full flex justify-center w-[453.333px]">
+							<div class="bg-white h-[450px] rounded-[0.625rem] flex flex-col items-center w-[400px]">
+								<div class="p-[16px] text-[rgb(76,175,79)] text-center">
+									<p class="font-[700] text-[1.5rem]">Gói Miễn Phí</p>
+									<p class="text-[1rem] font-[400] mt-[16px]">Truy cập dùng miễn phí các công cụ và sử
+										dụng có giới hạn</p>
+								</div>
+								<div>
+									<img src="./assets/images/service_card_divide.svg" alt="">
+								</div>
+								<div class="flex text-[rgb(76,175,79)] px-[16px] py-[8px] w-full justify-center">
+									<div class="w-[75%] flex flex-col">
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-clock"></i>
+											<p class=" text-[0.8125rem] font-[400]">-1 ngày sử dụng</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-facebook"></i>
+											<p class=" text-[0.8125rem] font-[400]">2 Facebook Account</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-file-earmark-text"></i>
+											<p class=" text-[0.8125rem] font-[400]">20 bài / ngày</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-flag-fill"></i>
+											<p class=" text-[0.8125rem] font-[400]">Trang không giới hạn</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-pencil-square"></i>
+											<p class=" text-[0.8125rem] font-[400]">Đăng bài video + ảnh <br>(Không thay
+												đổi ảnh ô 2)</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-trash"></i>
+											<p class=" text-[0.8125rem] font-[400]">Xóa bài hàng loạt trên page</p>
+										</div>
+									</div>
+								</div>
+								<button
+									class="mt-[40px] w-[11.1875rem] font-[700] btn-primary-hover text-btn-primary bg-[--green-primary] h-fit py-[8px] px-[22px] rounded-[1.25rem] text-white">
+									FREE
+								</button>
+							</div>
+						</div>
+
+
+						<div class="swiper-slide h-full flex justify-center w-[453.333px]">
+							<div
+								class="bg-[rgb(76,175,79)] h-[450px] rounded-[0.625rem] flex flex-col items-center w-[400px]">
+								<div class="p-[16px] text-white text-center">
+									<p class="font-[700] text-[1.5rem]">Gói Trải Nghiệm</p>
+									<p class="text-[1rem] font-[400] mt-[16px]">Truy cập dùng miễn phí các công cụ và sử
+										dụng có giới hạn</p>
+								</div>
+								<div>
+									<img src="./assets/images/service_card_divide.svg" alt="">
+								</div>
+								<div class="flex text-white px-[16px] py-[8px] w-full justify-center">
+									<div class="w-[75%] flex flex-col">
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-clock"></i>
+											<p class=" text-[0.8125rem] font-[400]">10 ngày sử dụng</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-facebook"></i>
+											<p class=" text-[0.8125rem] font-[400]">5 Facebook Account</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-file-earmark-text"></i>
+											<p class=" text-[0.8125rem] font-[400]">Số bài không giới hạn</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-flag-fill"></i>
+											<p class=" text-[0.8125rem] font-[400]">Trang không giới hạn</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-pencil-square"></i>
+											<p class=" text-[0.8125rem] font-[400]">Đăng bài video + ảnh</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-trash"></i>
+											<p class=" text-[0.8125rem] font-[400]">Xóa bài hàng loạt trên page</p>
+										</div>
+									</div>
+								</div>
+								<button
+									class="mt-[40px] w-[11.1875rem] text-[rgb(1,158,247)] font-[700] btn-primary-hover text-btn-primary bg-white h-fit py-[8px] px-[22px] rounded-[1.25rem]">
+									24000 XU
+								</button>
+							</div>
+						</div>
+
+						<div class="swiper-slide h-full flex justify-center w-[453.333px]">
+							<div class="bg-white h-[450px] rounded-[0.625rem] flex flex-col items-center w-[400px]">
+								<div class="p-[16px] text-[rgb(76,175,79)] text-center">
+									<p class="font-[700] text-[1.5rem]">Gói cơ bản</p>
+									<p class="text-[1rem] font-[400] mt-[16px]">Truy cập dùng miễn phí các công cụ và sử
+										dụng có giới hạn</p>
+								</div>
+								<div>
+									<img src="./assets/images/service_card_divide.svg" alt="">
+								</div>
+								<div class="flex text-[rgb(76,175,79)] px-[16px] py-[8px] w-full justify-center">
+									<div class="w-[75%] flex flex-col">
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-clock"></i>
+											<p class=" text-[0.8125rem] font-[400]">30 ngày sử dụng</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-facebook"></i>
+											<p class=" text-[0.8125rem] font-[400]">5 Facebook Account</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-file-earmark-text"></i>
+											<p class=" text-[0.8125rem] font-[400]">15 bài / ngày</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-flag-fill"></i>
+											<p class=" text-[0.8125rem] font-[400]">Trang không giới hạn</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-pencil-square"></i>
+											<p class=" text-[0.8125rem] font-[400]">Đăng bài video + ảnh</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-trash"></i>
+											<p class=" text-[0.8125rem] font-[400]">Xóa bài hàng loạt trên page</p>
+										</div>
+									</div>
+								</div>
+								<button
+									class="mt-[40px] w-[11.1875rem] font-[700] btn-primary-hover text-btn-primary bg-[--green-primary] h-fit py-[8px] px-[22px] rounded-[1.25rem] text-white">
+									64000 XU
+								</button>
+							</div>
+						</div>
+
+						<div class="swiper-slide h-full flex justify-center w-[453.333px]">
+							<div
+								class="bg-[rgb(76,175,79)] h-[450px] rounded-[0.625rem] flex flex-col items-center w-[400px]">
+								<div class="p-[16px] text-white text-center">
+									<p class="font-[700] text-[1.5rem]">Gói Tiêu Chuẩn</p>
+									<p class="text-[1rem] font-[400] mt-[16px]">Truy cập dùng miễn phí các công cụ và sử
+										dụng có giới hạn</p>
+								</div>
+								<div>
+									<img src="./assets/images/service_card_divide.svg" alt="">
+								</div>
+								<div class="flex text-white px-[16px] py-[8px] w-full justify-center">
+									<div class="w-[75%] flex flex-col">
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-clock"></i>
+											<p class=" text-[0.8125rem] font-[400]">30 ngày sử dụng</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-facebook"></i>
+											<p class=" text-[0.8125rem] font-[400]">5 Facebook Account</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-file-earmark-text"></i>
+											<p class=" text-[0.8125rem] font-[400]">Số bài không giới hạn</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-flag-fill"></i>
+											<p class=" text-[0.8125rem] font-[400]">Trang không giới hạn</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-pencil-square"></i>
+											<p class=" text-[0.8125rem] font-[400]">Đăng bài video + ảnh</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-trash"></i>
+											<p class=" text-[0.8125rem] font-[400]">Xóa bài hàng loạt trên page</p>
+										</div>
+									</div>
+								</div>
+								<button
+									class="mt-[40px] w-[11.1875rem] text-[rgb(1,158,247)] font-[700] btn-primary-hover text-btn-primary bg-white h-fit py-[8px] px-[22px] rounded-[1.25rem]">
+									80000 XU
+								</button>
+							</div>
+						</div>
+
+						<div class="swiper-slide h-full flex justify-center w-[453.333px]">
+							<div class="bg-white h-[450px] rounded-[0.625rem] flex flex-col items-center w-[400px]">
+								<div class="p-[16px] text-[rgb(76,175,79)] text-center">
+									<p class="font-[700] text-[1.5rem]">Gói Nâng Cao</p>
+									<p class="text-[1rem] font-[400] mt-[16px]">Truy cập dùng miễn phí các công cụ và sử
+										dụng có giới hạn</p>
+								</div>
+								<div>
+									<img src="./assets/images/service_card_divide.svg" alt="">
+								</div>
+								<div class="flex text-[rgb(76,175,79)] px-[16px] py-[8px] w-full justify-center">
+									<div class="w-[75%] flex flex-col">
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-clock"></i>
+											<p class=" text-[0.8125rem] font-[400]">66 ngày sử dụng</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-facebook"></i>
+											<p class=" text-[0.8125rem] font-[400]">5 Facebook Account</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-file-earmark-text"></i>
+											<p class=" text-[0.8125rem] font-[400]">Số bài không giới hạn</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-flag-fill"></i>
+											<p class=" text-[0.8125rem] font-[400]">Trang không giới hạn</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-pencil-square"></i>
+											<p class=" text-[0.8125rem] font-[400]">Đăng bài video + ảnh</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-trash"></i>
+											<p class=" text-[0.8125rem] font-[400]">Xóa bài hàng loạt trên page</p>
+										</div>
+									</div>
+								</div>
+								<button
+									class="mt-[40px] w-[11.1875rem] font-[700] btn-primary-hover text-btn-primary bg-[--green-primary] h-fit py-[8px] px-[22px] rounded-[1.25rem] text-white">
+									144000 XU
+								</button>
+							</div>
+						</div>
+
+						<div class="swiper-slide h-full flex justify-center w-[453.333px]">
+							<div
+								class="bg-[rgb(76,175,79)] h-[450px] rounded-[0.625rem] flex flex-col items-center w-[400px]">
+								<div class="p-[16px] text-white text-center">
+									<p class="font-[700] text-[1.5rem]">Gói Cao Cấp</p>
+									<p class="text-[1rem] font-[400] mt-[16px]">Truy cập dùng miễn phí các công cụ và sử
+										dụng có giới hạn</p>
+								</div>
+								<div>
+									<img src="./assets/images/service_card_divide.svg" alt="">
+								</div>
+								<div class="flex text-white px-[16px] py-[8px] w-full justify-center">
+									<div class="w-[75%] flex flex-col">
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-clock"></i>
+											<p class=" text-[0.8125rem] font-[400]">110 ngày sử dụng</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-facebook"></i>
+											<p class=" text-[0.8125rem] font-[400]">5 Facebook Account</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-file-earmark-text"></i>
+											<p class=" text-[0.8125rem] font-[400]">Số bài không giới hạn</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-flag-fill"></i>
+											<p class=" text-[0.8125rem] font-[400]">Trang không giới hạn</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-pencil-square"></i>
+											<p class=" text-[0.8125rem] font-[400]">Đăng bài video + ảnh</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-trash"></i>
+											<p class=" text-[0.8125rem] font-[400]">Xóa bài hàng loạt trên page</p>
+										</div>
+									</div>
+								</div>
+								<button
+									class="mt-[40px] w-[11.1875rem] text-[rgb(1,158,247)] font-[700] btn-primary-hover text-btn-primary bg-white h-fit py-[8px] px-[22px] rounded-[1.25rem]">
+									240000 XU
+								</button>
+							</div>
+						</div>
+
+						<div class="swiper-slide h-full flex justify-center w-[453.333px]">
+							<div class="bg-white h-[450px] rounded-[0.625rem] flex flex-col items-center w-[400px]">
+								<div class="p-[16px] text-[rgb(76,175,79)] text-center">
+									<p class="font-[700] text-[1.5rem]">Gói Siêu Cấp</p>
+									<p class="text-[1rem] font-[400] mt-[16px]">Truy cập dùng miễn phí các công cụ và sử
+										dụng có giới hạn</p>
+								</div>
+								<div>
+									<img src="./assets/images/service_card_divide.svg" alt="">
+								</div>
+								<div class="flex text-[rgb(76,175,79)] px-[16px] py-[8px] w-full justify-center">
+									<div class="w-[75%] flex flex-col">
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-clock"></i>
+											<p class=" text-[0.8125rem] font-[400]">365 ngày sử dụng</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-facebook"></i>
+											<p class=" text-[0.8125rem] font-[400]">5 Facebook Account</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-file-earmark-text"></i>
+											<p class=" text-[0.8125rem] font-[400]">Số bài không giới hạn</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-flag-fill"></i>
+											<p class=" text-[0.8125rem] font-[400]">Trang không giới hạn</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-pencil-square"></i>
+											<p class=" text-[0.8125rem] font-[400]">Đăng bài video + ảnh</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-trash"></i>
+											<p class=" text-[0.8125rem] font-[400]">Xóa bài hàng loạt trên page</p>
+										</div>
+									</div>
+								</div>
+								<button
+									class="mt-[40px] w-[11.1875rem] font-[700] btn-primary-hover text-btn-primary bg-[--green-primary] h-fit py-[8px] px-[22px] rounded-[1.25rem] text-white">
+									560000 XU
+								</button>
+							</div>
+						</div>
+
+
+						<div class="swiper-slide h-full flex justify-center w-[453.333px]">
+							<div
+								class="bg-[rgb(76,175,79)] h-[450px] rounded-[0.625rem] flex flex-col items-center w-[400px]">
+								<div class="p-[16px] text-white text-center">
+									<p class="font-[700] text-[1.5rem]">Gói Super</p>
+									<p class="text-[1rem] font-[400] mt-[16px]">Truy cập dùng miễn phí các công cụ và sử
+										dụng có giới hạn</p>
+								</div>
+								<div>
+									<img src="./assets/images/service_card_divide.svg" alt="">
+								</div>
+								<div class="flex text-white px-[16px] py-[8px] w-full justify-center">
+									<div class="w-[75%] flex flex-col">
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-clock"></i>
+											<p class=" text-[0.8125rem] font-[400]">730 ngày sử dụng</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-facebook"></i>
+											<p class=" text-[0.8125rem] font-[400]">5 Facebook Account</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-file-earmark-text"></i>
+											<p class=" text-[0.8125rem] font-[400]">Số bài không giới hạn</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-flag-fill"></i>
+											<p class=" text-[0.8125rem] font-[400]">Trang không giới hạn</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-pencil-square"></i>
+											<p class=" text-[0.8125rem] font-[400]">Đăng bài video + ảnh</p>
+										</div>
+
+										<div class="flex gap-[8px] items-center py-[3px]">
+											<i class="bi bi-trash"></i>
+											<p class=" text-[0.8125rem] font-[400]">Xóa bài hàng loạt trên page</p>
+										</div>
+									</div>
+								</div>
+								<button
+									class="mt-[40px] w-[11.1875rem] text-[rgb(1,158,247)] font-[700] btn-primary-hover text-btn-primary bg-white h-fit py-[8px] px-[22px] rounded-[1.25rem]">
+									1040000 XU
+								</button>
+							</div>
+						</div>
+
+
+						</div>
+					<!-- If we need pagination -->
+					<div class="swiper-pagination2 swiper-pagination"></div>
+
+					<!-- If we need navigation buttons -->
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End slide -->
+
+	<!-- Service -->
+	<section class="w-full bg-white flex justify-center pt-[1rem] max-md:pb-[5rem]">
+		<div class="w-full max-w-[1480px] flex flex-col items-center">
+			<p class="font-[600] text-[40px] mb-[0.35em] text-center max-md:text-[25px]">
+				Làm sao để sử dụng dịch vụ của chúng tôi ?
+			</p>
+			<div class="w-full">
+				<!-- Slider main container -->
+				<div class="swiper3 swiper w-[72rem] max-[1212px]:w-full h-[360px]">
+					<!-- Additional required wrapper -->
+					<div class="swiper-wrapper">
+						<!-- Slides -->
+						<div class="swiper-slide flex justify-center">
+							<div class=" w-[23rem] h-fit relative">
+								<img src="./assets/images/test_blog_1.png" alt="">
+								<div
+									class="max-md:w-[95%] rounded-[4px] shadow-[0px_8px_16px_0px_#F5F7FA] absolute flex flex-col items-center -bottom-[2rem] py-[0.5rem] px-[1.5rem] left-[50%] transform translate-x-[-50%] bg-[#F5F7FA] w-[85%]">
+									<p class="font-[600] text-center text-[1.25rem]">Hướng dẫn cách đăng bài băng chuyển
+										2 ô</p>
+									<a class=" hover:bg-[rgba(0,0,0,0.04)] px-[8px] py-[6px] mt-[8px] reounded-[4px] font-[600] text-[1.25rem] text-[--green-primary] "
+										href="#">
+										Xem ngay ->
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide flex justify-center">
+							<div class=" w-[23rem] h-fit relative">
+								<img src="./assets/images/test_blog_1.png" alt="">
+								<div
+									class="max-md:w-[95%] rounded-[4px] shadow-[0px_8px_16px_0px_#F5F7FA] absolute flex flex-col items-center -bottom-[2rem] py-[0.5rem] px-[1.5rem] left-[50%] transform translate-x-[-50%] bg-[#F5F7FA] w-[85%]">
+									<p class="font-[600] text-center text-[1.25rem]">Hướng dẫn cách đăng bài băng chuyển
+										2 ô</p>
+									<a class=" hover:bg-[rgba(0,0,0,0.04)] px-[8px] py-[6px] mt-[8px] reounded-[4px] font-[600] text-[1.25rem] text-[--green-primary] "
+										href="#">
+										Xem ngay ->
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide flex justify-center">
+							<div class=" w-[23rem] h-fit relative">
+								<img src="./assets/images/test_blog_1.png" alt="">
+								<div
+									class="max-md:w-[95%] rounded-[4px] shadow-[0px_8px_16px_0px_#F5F7FA] absolute flex flex-col items-center -bottom-[2rem] py-[0.5rem] px-[1.5rem] left-[50%] transform translate-x-[-50%] bg-[#F5F7FA] w-[85%]">
+									<p class="font-[600] text-center text-[1.25rem]">Hướng dẫn cách đăng bài băng chuyển
+										2 ô</p>
+									<a class=" hover:bg-[rgba(0,0,0,0.04)] px-[8px] py-[6px] mt-[8px] reounded-[4px] font-[600] text-[1.25rem] text-[--green-primary] "
+										href="#">
+										Xem ngay ->
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-pagination3 swiper-pagination"></div>
+					<!-- If we need navigation buttons -->
+
+
+					<!-- If we need scrollbar -->
+					<!-- <div class="swiper-scrollbar"></div> -->
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End services -->
+	<section class="w-full py-[2rem]">
+		<div class="w-full flex flex-col items-center gap-[2rem]">
+			<p class="text-[4rem] font-[600] text-center w-[90%] max-[1200px]:text-[40px]">Bạn còn chờ đợi gì nữa?</p>
+			<a href="/login/"
+				class="py-[0.875rem] px-[2rem] mt-[40px] btn-primary-hover text-btn-primary bg-[--green-primary] h-fit rounded-[6px] text-white">
+				Đăng ký ngay
+			</a>
+		</div>
+	</section>
+	<!-- Footer -->
+	<section class="w-full flex justify-around bg-[rgb(38,50,56)] text-white max-md:items-center items-end h-[7.1875rem] max-[1200px]:text-[0.875rem]">
+		<div class="flex flex-col gap-[5px]">
+			<div class="flex gap-[10px] items-center">
+				<img src="./assets/images/logo.svg" alt="">
+				<p class="logo-text">METUS.VN</p>
+			</div>
+			<div>
+				Copyright © 2023 All <br class="max-md:block hidden"> rights reserved
+			</div>
+		</div>
+		<div class="flex gap-[2.8rem] max-md:flex-col max-md:gap-[1rem]">
+			<p>Điều khoản sử dụng</p>
+			<p>Chính sách bảo mật</p>
+			<p>Liên hệ với chúng tôi</p>
+		</div>
+	</section>
+</body>
+<script src="./assets/js/main.js"></script>
+
+</html>
